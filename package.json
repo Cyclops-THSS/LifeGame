@@ -4,7 +4,7 @@
   "description": "Assignment 1 of course _Software Engineering 3_",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha js/test"
   },
   "repository": {
     "type": "git",
