@@ -1,11 +1,12 @@
 /*global $, g_controller, g_renderer, g_timer*/
 $(document).ready(function () {
+	// init with default value
 	var starting = true,
 		paused = false,
 		picking = false;
-	// init with default value
 	g_controller.initDim($('#dimension').val());
 	g_timer.setInterval(1000 / $('#iter').val());
+	// init over
 	$('#dimension').change(function () {
 		g_timer.stop();
 		g_controller.initDim(this.value);
