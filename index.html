@@ -2,20 +2,51 @@
 <html>
 
 <head>
-    <title>Life Game Demo</title>
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Life Game Demo</title>
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+	<link rel="stylesheet" href="css/index.css" media="screen">
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="js/render.js" charset="utf-8"></script>
-    <script src="js/logic.js" charset="utf-8"></script>
-    <script src="js/timer.js" charset="utf-8"></script>
+	<!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script src="js/render.js" charset="utf-8"></script>
+	<script src="js/logic.js" charset="utf-8"></script>
+	<script src="js/timer.js" charset="utf-8"></script>
+	<script src="js/ui.js" charset="utf-8"></script>
+	<div class="container">
+		<div class="row" style="height: 100%">
+			<div class="col s3" style="height: 100%">
+				<br />
+				<h3>生命游戏</h3>
+				<h4>设置</h4>
+				<div>单元格数量</div>
+				<p class="range-field"><input type="range" min="2" max="50" value="5" id="dimension"></p>
+				<div>迭代速度</div>
+				<p class="range-field"><input type="range" min="0.1" max="50" value="10" step="0.01" id="iter"></p>
+				<div>初始活细胞比</div>
+				<p class="range-field"><input type="range" min="0.0" max="1.0" value="0.3" step="0.01" id="ratio"></p>
+				<div class="row">
+					<a class="col s12 dropdown-button btn" data-activates="initial-mode" id="initmode">初始化模式</a>
+					<ul id="initial-mode" class="dropdown-content">
+						<li><a id="randomize">随机</a></li>
+						<li><a id="choose">点选</a></li>
+					</ul>
+				</div>
+				<div class="row">
+					<a class="col s6 waves-effect waves-light btn" id="start">开始</a>
+					<a class="col s6 waves-effect waves-light btn disabled" id="stop">结束</a>
+				</div>
+			</div>
+			<div class="col s9" id="canvas-container">
+				<canvas class="canvas"></canvas>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
